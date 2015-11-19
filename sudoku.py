@@ -1,4 +1,4 @@
 '''
-Por Nitai Charan e Clovison G
+Por Nitai Charan | Clovison G | Fabiano Antero
 Arquivo principal
 '''
