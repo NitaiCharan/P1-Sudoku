@@ -16,4 +16,4 @@ def le_opcao (titulo, lista_opcao_validas):
         if opcao in lista_opcao_validas:
             break
 
-    return opcao 
+    return opcao
