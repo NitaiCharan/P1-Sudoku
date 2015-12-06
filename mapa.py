@@ -8,7 +8,8 @@ import sudoku, curses
 
 
 def desenha_sudoku(window, grade, selecao):
-    curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_BLUE)
+    
+    curses.init_pair(2, curses.COLOR_YELLOW, curses.COLOR_BLACK)
     for lin_grade in range(3):
         for col_grade in range(3):
             regiao = grade[lin_grade][col_grade]
@@ -30,18 +31,49 @@ def desenha_sudoku(window, grade, selecao):
                     y = 4*(col_grade+1)-4+col_regiao + final1
                     x = 4*(lin_grade+1)-4+lin_regiao + final1
 
-                    if posicao == selecao:
-                        window.addstr(x, y, celula[sudoku.DIGITO], curses.color_pair(1))
+
+
+
+                    if posicao == selecao :
+                        curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
+                        window.addstr(x, y, a, curses.color_pair(1))
+                        window.refresh()
 
                         lg = lin_grade
                         lr = lin_regiao
                         cg = col_grade
                         cr = col_regiao
 
-                    else:
-                        window.addstr(x, y, a)
-                        window.refresh()
+
+                        z = str(lg)+str(lr)+str(cg)+str(cr)
+                        windowt = curses.newwin(5,5,10,0)
+                        windowt.addstr(1,1,z)
+                        windowt.refresh()
+                        
+                        
+                    if a == grade [lin_grade] [col_grade] [lin_regiao] [col_regiao]['digito'] and grade [lin_grade] [col_grade] [lin_regiao] [col_regiao] ['automatico'] == False and grade [lin_grade] [col_grade] [lin_regiao] [col_regiao] ['digito'] != '.':
+                        
+                        if posicao == selecao:
+                            window.addstr(x, y, a, curses.color_pair(1))
+                            window.refresh()
+                        else:
+                           
+                            curses.init_pair(2, curses.COLOR_YELLOW, curses.COLOR_BLACK)
+                            window.addstr(x, y, a, curses.color_pair(2))
+                            window.refresh()
+                        
                     
+
+                    else:
+                        if posicao == selecao:
+                            curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
+                            window.addstr(x, y, a, curses.color_pair(1))
+                            window.refresh()
+                        else:                        
+                            window.addstr(x, y, a)
+                            window.refresh()
+
+                        
                     if col_regiao == 0:
                         y = 4*(col_grade+1)-4+col_regiao + final3
                         x = 4*(lin_grade+1)-4+lin_regiao + final1
@@ -97,8 +129,8 @@ def desenha_sudoku(window, grade, selecao):
                                 b = '+'
                                 window.addstr(x, y, b)
                                 window.refresh()
-
-                    
+                      
+             
     return lg,  lr, cg, cr
 
 
@@ -141,6 +173,14 @@ window1 = curses.newwin(14, 13, 0, 30)
 desenha_sudoku(window1, jogo, selecao)
 
 
+
+
+'''
+windowt = curses.newwin(30,30,10,0)
+windowt.addstr(1,1,instrucao)
+window3.refresh()
+'''
+
 #Futura rodadas
 
 key = window1.getch()
@@ -148,7 +188,7 @@ key = window1.getch()
 while key != 10:
     
     key = chr(key)
-
+   
     if key == 'w':
         if (selecao - 9) >= 1:
             selecao -= 9
@@ -162,15 +202,9 @@ while key != 10:
         if (selecao + 1) <= 81:
             selecao += 1
     elif key in ['0','1','2','3','4','5','6','7','8','9']:
-        
-        lg,  lr, cg, cr = desenha_sudoku(window1, jogo, selecao)
-
-
-        jogo_t = tratador(jogo,key, lg,  lr, cg, cr)
-        #desenha_sudoku(window1, jogo_t, selecao)
-        
-        
-    desenha_sudoku(window1, jogo, selecao)
+        jogo = tratador(jogo,key, lg,  lr, cg, cr)
+                
+    lg,  lr, cg, cr = desenha_sudoku(window1, jogo, selecao)
     key = window1.getch()
     
 curses.endwin()
