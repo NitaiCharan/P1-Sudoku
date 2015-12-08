@@ -25,6 +25,8 @@ Esta biblioteca trata da aparencia da grade do tabuleiro.
 #Paremetros:
 #Retorno:
 
+def jogo_salvo():
+    return jogo
 
 def desenha_sudoku(window, grade, selecao):
     curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
