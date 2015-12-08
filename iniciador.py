@@ -228,7 +228,11 @@ while key != 10:
             break
     elif key == 'x':
         from resolve import resolve
+<<<<<<< HEAD
+        resolve(jogo, solucao)
+=======
         resolve()
+>>>>>>> origin/master
 
 
     lg,  lr, cg, cr = desenha_sudoku(window1, jogo, selecao)
