@@ -227,6 +227,7 @@ while key != 10:
         if resposta in ['s', 'S']:
             break
     elif key == 'x':
+        from resolve import resolve
         resolve()
 
 
