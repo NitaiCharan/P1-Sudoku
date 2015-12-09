@@ -159,6 +159,8 @@ def tratador(jogo,key, lg,  lr, cg, cr):
     if jogo [lg][cg][lr][cr]['automatico']== True:
         pass
     elif jogo [lg][cg][lr][cr]['automatico']== False:
+        if key == '0':
+            key = '.'
         jogo [lg][cg][lr][cr]['digito'] = key
     return jogo
 
@@ -211,11 +213,8 @@ while key != 10:
     elif key == 'd':
         if (selecao + 1) <= 81:
             selecao += 1
-    elif key in ['1','2','3','4','5','6','7','8','9']:
+    elif key in ['0','1','2','3','4','5','6','7','8','9','.']:
         jogo = tratador(jogo,key, lg,  lr, cg, cr)
-    elif key in ['0', '.']:
-        from limpa_digito import limpa_digito
-        limpa_digito(jogo)
     elif key == 'n':
         from novo_jogo import novo_jogo
         jogo,solucao = novo_jogo(jogo,solucao)
