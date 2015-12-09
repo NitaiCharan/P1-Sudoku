@@ -218,7 +218,8 @@ while key != 10:
         limpa_digito(jogo)
     elif key == 'n':
         from novo_jogo import novo_jogo
-        novo_jogo()
+        jogo,solucao = novo_jogo(jogo,solucao)
+        
     elif key == 'z':
         from salva_jogo import salva_jogo
         salva_jogo(jogo, solucao)
