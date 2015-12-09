@@ -230,10 +230,7 @@ while key != 10:
             break
     elif key == 'x':
         from resolve import resolve
-        resolve(jogo, solucao)
-        resolve()
-
-
+        jogo, solucao = resolve(jogo, solucao)
 
     lg,  lr, cg, cr = desenha_sudoku(window1, jogo, selecao)
     key = window1.getch()
