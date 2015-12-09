@@ -1,20 +1,21 @@
 import sudoku, curses, pickle
 
 try:
-    arquivo = open ('save.sv', 'rb')
+    arquivo = open ('save.sv', 'rb+')
     jogo = pickle.load(arquivo)
     arquivo.close()
-    arquivo = open ('solucao.sv', 'rb')
+    
+    arquivo = open ('solucao.sv', 'rb+')
     solucao = pickle.load(arquivo)
     arquivo.close()
 
     
 except:
     jogo, solucao = sudoku.inicia_sudoku()
-    arquivo = open('save.sv', 'wb')
+    arquivo = open('save.sv', 'wb+')
     pickle.dump(jogo, arquivo)
     arquivo.close()
-    arquivo = open('solucao.sv', 'wb')
+    arquivo = open('solucao.sv', 'wb+')
     pickle.dump(solucao, arquivo)
     arquivo.close()
 
@@ -177,7 +178,7 @@ selecao = 1
 
 
 window3 = curses.newwin(20,30,0,45)
-instrucao = 'Comandos:\n   w \n a   d move o cursor\n   s\n  1-9  entra com um dígito\n   0 . limpa o dígito\n   n   novo jogo\n   z   salva o jogo\n   f   fecha o jogo\n   x   resolve'
+instrucao = 'Comandos:\n   w \n a   d move o cursor\n   s\n  1-9  entra com um dígito\n  0 . limpa o dígito\n   n   novo jogo\n   z   salva o jogo\n   f   fecha o jogo\n   x   resolve'
 window3.addstr(1,1,instrucao)
 window3.refresh()
 
@@ -214,13 +215,14 @@ while key != 10:
         jogo = tratador(jogo,key, lg,  lr, cg, cr)
     elif key in ['0', '.']:
         from limpa_digito import limpa_digito
-        limpa_digito()
+        limpa_digito(jogo)
     elif key == 'n':
         from novo_jogo import novo_jogo
         novo_jogo()
     elif key == 'z':
         from salva_jogo import salva_jogo
-        salva_jogo()
+        salva_jogo(jogo, solucao)
+        
     elif key == 'f':
         from fecha_jogo import fecha_jogo
         resposta = fecha_jogo()
@@ -228,11 +230,9 @@ while key != 10:
             break
     elif key == 'x':
         from resolve import resolve
-<<<<<<< HEAD
         resolve(jogo, solucao)
-=======
         resolve()
->>>>>>> origin/master
+
 
 
     lg,  lr, cg, cr = desenha_sudoku(window1, jogo, selecao)

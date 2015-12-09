@@ -2,7 +2,7 @@ def fecha_jogo ():
     
     import curses
     
-    mensagem = 'Deseja realmente sair do jogo? (S/N): '
+    menssagem = 'Deseja realmente sair do jogo? (S/N): '
     #################################################
     #Para utilização de confirmação de usuário sera necessário a cópia deste
     #conteudo
@@ -11,7 +11,7 @@ def fecha_jogo ():
     curses.cbreak()
     curses.echo()
     windowt = curses.newwin(2,100,15,0)
-    windowt.addstr(1,1,mensagem)
+    windowt.addstr(1,1,menssagem)
     resposta = windowt.getch()
     resposta = chr (resposta)
     windowt.refresh()
