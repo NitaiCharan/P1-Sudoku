@@ -12,7 +12,7 @@ DIGITO = 'digito'
 AUTOMATICO = 'automatico'
 
 __MIXAGEM__ = 42 #E a resposta para a Vida, o Universo e tudo mais é... 42!
-__ESCONDER_MAX__ = 1#Quantidade de casas a esconder da solução (max.: +-50)
+__ESCONDER_MAX__ = 40 #Quantidade de casas a esconder da solução (max.: +-50)
 
 def __constroi_grade__():
     grade = []
