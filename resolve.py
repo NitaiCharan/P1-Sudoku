@@ -31,7 +31,7 @@ def resolve(jogo, solucao):
         pass
     
     if errou == False:
-        menssagem = 'Parabéns, você acertou. Aproveite e joge novamente. Precione qualquer tecla'
+        menssagem = 'Parabéns, você acertou. Aproveite e jogue novamente. Pressione qualquer tecla'
         curses.cbreak()
         curses.echo()
         windowt = curses.newwin(2,100,15,0)

@@ -61,9 +61,6 @@ def desenha_sudoku(window, grade, selecao):
                         cr = col_regiao
 
 
-
-
-
                     if a == grade [lin_grade] [col_grade] [lin_regiao] [col_regiao]['digito'] and grade [lin_grade] [col_grade] [lin_regiao] [col_regiao] ['automatico'] == False and grade [lin_grade] [col_grade] [lin_regiao] [col_regiao] ['digito'] != '.':
 
                         if posicao == selecao:
