@@ -1,5 +1,3 @@
-# sudoku
-
 ### Descrição
 
 Deverá ser implementado em linguagem Python, em modo texto, um jogo SUDOKU estilo
@@ -13,9 +11,9 @@ região só pode ter um número de cada um dos 1 a 9.” http://pt.wikipedia.org
 
 ### Requisitos
 
-### Interface com o usuário
+#### Interface com o usuário
 
-```python
+```
 
 SUDOKU-LOKU
 Regras:                           +-------+-------+-------+        Comandos:
@@ -38,7 +36,7 @@ jogo deve ser gerado (ver item 4).
 
 As opções deverão funcionar da seguinte forma:
 
-### 1. MOVE O CURSOR (w, a, d ou s)
+#### 1. Move o cursor (w, a, d ou s)
 Move o cursor no tabuleiro do jogo. Onde:
 
 w) Para cima
@@ -49,17 +47,17 @@ s) Para baixo
 A posição do cursor deve ser indicada por uma cor diferente de background e foreground
 (recomendado: cinza claro e preto).
 
-### 2. ENTRA COM UM DÍGITO (1, 2, 3, 4, 5, 6, 7, 8 ou 9)
+#### 2. Entra com um dígito (1, 2, 3, 4, 5, 6, 7, 8 ou 9)
 Altera o valor da célula onde o cursor estiver posicionado, inserindo o caractere digitado. A cor
 de background das células preenchidas deve ser preto e a de foreground diferente da utilizada
 nas células geradas automaticamente (recomendado: amarelo).
 
-### 3. LIMPA O DÍGITO (0 ou .)
+#### 3. Limpa o dígito (0 ou .)
 Limpa o valor da célula onde o cursor estiver posicionado, inserindo o caractere '.' ponto como
 indicador de célula vazia. A cor de background das células preenchidas deve ser preto e a de
 foreground branco.
 
-### 4. NOVO JOGO (n)
+#### 4. Novo jogo (n)
 Cria um novo jogo, limpando todas as células e preenchendo o tabuleiro com valores gerados
 automaticamente em algumas células. Será disponibilizada uma biblioteca com as sub rotinas
 necessárias para a geração dos valores aleatórios.
@@ -69,19 +67,19 @@ das células preenchidas pelo jogador (recomendado: branco);
 
 Deverá ser solicitada a confirmação do usuário.
 
-### 5. SALVA O JOGO (z)
+#### 5. Salva o jogo (z)
 Salva o jogo atual em arquivo para que o usuário possa continuar a jogar em outro momento,
 exibindo uma mensagem de confirmação.
 
-### 6. FECHA O JOGO (f)
+#### 6. Fecha o jogo (f)
 Fecha o aplicativo, solicitando a confirmação do usuário.
 
-### 7. RESOLVE (x)
+#### 7. Resolve (x)
 Verifica se o jogador resolveu corretamente o jogo atual, exibindo uma mensagem de acordo.
 Caso a solução esteja incorreta, o jogo deve continuar. Caso a solução esteja correta, deverá
 ser executada a opção de novo jogo (confirmando a ação com o usuário).
 
-#### ATENÇÃO!
+##### ATENÇÃO!
 Utilize sub rotinas e arquivos separados para modularizar o algoritmo implementado.
 
 ##### Avaliação
